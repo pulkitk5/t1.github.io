@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Template 1</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap"
+      rel="stylesheet"
+    />
+
+    <script
+      src="https://use.fontawesome.com/releases/v5.14.0/js/all.js"
+      data-auto-replace-svg="nest"
+    ></script>
+
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      header {
+        display: flex;
+        background: white;
+        margin: auto;
+        width: 100%;
+        height: 100px;
+        font-family: "Russo One", sans-serif;
+        position: sticky;
+        top: 0;
+        z-index: 10000;
+      }
+
+      .logo,
+      .nav-bar {
+        display: flex;
+        align-items: center;
+      }
+
+      .logo {
+        flex: 1;
+        margin-left: 20px;
+      }
+
+      .logo-img {
+        height: 90px;
+      }
+
+      .nav-bar {
+        flex: 3;
+        justify-content: flex-end;
+        margin-right: 25px;
+        margin-top: 15px;
+      }
+
+      .nav-list {
+        display: flex;
+        list-style-type: none;
+        font-size: 22px;
+        letter-spacing: 1px;
+      }
+
+      .nav-items a {
+        padding: 10px;
+        text-decoration: none;
+        color: black;
+      }
+
+      .nav-items a:hover {
+        background: black;
+        color: white;
+        transition: 0.5s ease;
+      }
+
+      footer {
+        width: 100%;
+        height: auto;
+        background: gray;
+        padding: 20px;
+        display: flex;
+      }
+
+      .sm {
+        flex: 1;
+        padding-top: 30px;
+        height: 100px;
+        width: 100%;
+
+        text-align: center;
+      }
+
+      .sm i {
+        font-size: 40px;
+        color: black;
+        padding: 5px;
+      }
+
+      .sm i:hover {
+        color: white;
+        transition: 0.5s ease;
+      }
+
+      .sm ul {
+        list-style-type: none;
+      }
+
+      .fdbk {
+        margin-left: 10%;
+        flex: 2;
+        width: 100%;
+        font-size: 20px;
+        font-family: "Do Hyeon", sans-serif;
+      }
+
+      .fdbk label {
+        letter-spacing: 1px;
+      }
+
+      .form-group textarea,
+      .form-group input {
+        border: 1px solid black;
+        width: 80%;
+      }
+
+      .st-btn {
+        border: 1px solid black;
+        border-radius: 5px;
+        padding: 5px;
+        width: 100px;
+        letter-spacing: 2px;
+      }
+
+      .st-btn:hover {
+        color: rgb(99, 99, 99);
+        transition: 0.2s linear;
+      }
+
+      .tab {
+        display: none;
+      }
+
+      #check {
+        display: none;
+      }
+
+      .tab i {
+        padding: 5px;
+        font-size: 30px;
+        cursor: pointer;
+      }
+
+      .carousel-item {
+        height: 800px;
+        width: 100%;
+      }
+
+      .carousel-item img {
+        width: 100%;
+        height: 100%;
+      }
+
+      #specs,
+      #dets {
+        font-family: "Russo One", sans-serif;
+        font-size: 40px;
+        text-decoration: none;
+        color: white;
+      }
+
+      @media screen and (max-width: 1080px) {
+        .carousel-item {
+          height: 600px;
+          transition: 1s linear;
+        }
+      }
+
+      @media screen and (max-width: 900px) {
+        .nav-list {
+          position: fixed;
+          width: 100%;
+          height: 100vh;
+          background: white;
+          right: -100%;
+          top: 100px;
+          flex-direction: column;
+          align-items: center;
+          transition: 0.5s ease;
+          font-size: 25px;
+        }
+
+        .nav-items {
+          margin: 20px;
+        }
+
+        .top {
+          margin-top: 40px;
+        }
+
+        .tab {
+          display: block;
+        }
+
+        .tab:hover {
+          background: black;
+          color: white;
+          transition: 0.5s ease;
+        }
+
+        #check:checked ~ .nav-list {
+          right: 0;
+        }
+
+        .first {
+          flex-direction: column;
+        }
+        .carousel-item {
+          height: 500px;
+        }
+
+        #specs,
+        #dets {
+          font-size: 30px;
+          transition: 1s linear;
+        }
+      }
+
+      @media screen and (max-width: 700px) {
+        .carousel-item {
+          height: 400px;
+        }
+      }
+
+      @media screen and (max-width: 500px) {
+        .nav-list {
+          width: 100%;
+        }
+
+        .carousel-item {
+          height: 300px;
+        }
+
+        #specs,
+        #dets {
+          font-size: 25px;
+          transition: 1s linear;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="logo">
+        <a href=""><img src="lg.jpg" class="logo-img" /></a>
+      </div>
+
+      <nav class="nav-bar">
+        <input type="checkbox" id="check" />
+        <label for="check" class="tab">
+          <i class="fas fa-bars"></i>
+        </label>
+        <ul class="nav-list">
+          <li class="nav-items top"><a href="#">HOME</a></li>
+          <li class="nav-items"><a href="#specs">SPECIFICATIONS</a></li>
+          <li class="nav-items"><a href="#dets">DETAILS</a></li>
+          <li class="nav-items"><a href="#ctct">CONTACT US</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <div id="demo" class="carousel slide" data-ride="carousel">
+        <!-- Indicators -->
+        <ul class="carousel-indicators">
+          <li data-target="#demo" data-slide-to="0" class="active"></li>
+          <li data-target="#demo" data-slide-to="1"></li>
+          <li data-target="#demo" data-slide-to="2"></li>
+        </ul>
+
+        <!-- The slideshow -->
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="slide1.jpg" alt="Los Angeles" width="1100" height="500" />
+          </div>
+          <div class="carousel-item">
+            <img src="slide2.jpg" alt="Chicago" width="1100" height="500" />
+          </div>
+          <div class="carousel-item">
+            <img src="slide3.jpg" alt="New York" width="1100" height="500" />
+          </div>
+        </div>
+
+        <!-- Left and right controls -->
+        <a class="carousel-control-prev" href="#demo" data-slide="prev">
+          <span class="carousel-control-prev-icon"></span>
+        </a>
+        <a class="carousel-control-next" href="#demo" data-slide="next">
+          <span class="carousel-control-next-icon"></span>
+        </a>
+      </div>
+
+      <div class="accordion" id="accordionExample">
+        <div
+          class="card"
+          style="margin: 5px; background: black; border: 2px solid black"
+        >
+          <div class="card-header" id="headingTwo">
+            <h2 class="mb-0">
+              <button
+                id="specs"
+                class="btn btn-link btn-block text-left collapsed"
+                type="button"
+                data-toggle="collapse"
+                data-target="#collapseTwo"
+                aria-expanded="false"
+                aria-controls="collapseTwo"
+              >
+                SPECIFICATIONS
+              </button>
+            </h2>
+          </div>
+          <div
+            id="collapseTwo"
+            class="collapse"
+            aria-labelledby="headingTwo"
+            data-parent="#accordionExample"
+          >
+            <div
+              class="card-body"
+              style="
+                background: white;
+                font-family: 'Do Hyeon', sans-serif;
+                font-size: 20px;
+              "
+            >
+              <p><b>Operating System - </b>Intel Core i7</p>
+              <p><b>Brand - </b>Apple</p>
+              <p><b>Model Name - </b>Apple MacBook Pro</p>
+              <p><b>Item Dimensions - </b>39.7 x 7.2 x 28.3 Centimeters</p>
+            </div>
+          </div>
+        </div>
+        <div
+          class="card"
+          style="margin: 5px; background: black; border: 2px solid black"
+        >
+          <div class="card-header" id="headingThree">
+            <h2 class="mb-0">
+              <button
+                id="dets"
+                class="btn btn-link btn-block text-left collapsed"
+                type="button"
+                data-toggle="collapse"
+                data-target="#collapseThree"
+                aria-expanded="false"
+                aria-controls="collapseThree"
+              >
+                DETAILS
+              </button>
+            </h2>
+          </div>
+          <div
+            id="collapseThree"
+            class="collapse"
+            aria-labelledby="headingThree"
+            data-parent="#accordionExample"
+          >
+            <div
+              class="card-body"
+              style="
+                background: white;
+                font-family: 'Do Hyeon', sans-serif;
+                font-size: 20px;
+              "
+            >
+              <ul style="margin-left: 5%">
+                <li>Ninth-generation 6-core Intel Core i7 processor</li>
+                <li>
+                  Stunning 16-inch Retina display with True Tone technology
+                </li>
+                <li>Touch Bar and Touch ID</li>
+                <li>AMD Radeon Pro 5300M graphics with GDDR6 memory</li>
+                <li>Ultrafast SSD</li>
+                <li>Intel UHD Graphics 630</li>
+                <li>Six-speaker system with force-cancelling woofers</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer id="ctct">
+      <div class="fdbk">
+        <form>
+          <div class="form-group">
+            <label for="exampleFormControlInput1">E-mail</label>
+            <input
+              type="email"
+              class="form-control"
+              id="exampleFormControlInput1"
+              placeholder="name@example.com"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="exampleFormControlTextarea1">Feedback</label>
+            <textarea
+              class="form-control"
+              id="exampleFormControlTextarea1"
+              rows="3"
+            ></textarea>
+          </div>
+          <button class="st-btn" type="submit">SUBMIT</button>
+        </form>
+      </div>
+      <div class="sm">
+        <ul>
+          <li>
+            <a href="#"><i class="fab fa-facebook"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+          </li>
+        </ul>
+      </div>
+    </footer>
+  </body>
+</html>
